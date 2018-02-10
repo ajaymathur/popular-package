@@ -1,6 +1,6 @@
 {
   "name": "popular-package",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "author": {
     "name": "Ajay Narain Mathur",
     "email": "ajaynarainmathur@gmail.com"
@@ -18,7 +18,11 @@
   "engines": {
     "node": ">=8.5.0"
   },
-  "files": ["cli.js", "index.js", "lib"],
+  "files": [
+    "cli.js",
+    "index.js",
+    "lib"
+  ],
   "keywords": [
     "downloads",
     "popular",
