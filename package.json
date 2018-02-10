@@ -1,0 +1,31 @@
+{
+  "name": "popular-package",
+  "version": "0.0.0",
+  "author": {
+    "name": "Ajay Narain Mathur",
+    "email": "ajaynarainmathur@gmail.com"
+  },
+  "main": "index.js",
+  "bin": "cli.js",
+  "repository": "git@github.com:ajaymathur/popular-package.git",
+  "license": "MIT",
+  "dependencies": {
+    "cli-table": "^0.3.1",
+    "got": "^8.0.3",
+    "meow": "^4.0.0",
+    "read-pkg": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=8.5.0"
+  },
+  "files": ["cli.js", "index.js", "lib"],
+  "keywords": [
+    "downloads",
+    "popular",
+    "package",
+    "mono-repo",
+    "mono",
+    "popularity",
+    "npm"
+  ]
+}
