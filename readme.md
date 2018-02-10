@@ -9,3 +9,17 @@
 ```sh
 $ yan global add popular-package
 ```
+
+## Examples
+
+View popularity of packages within repo:
+
+```sh
+$ popular-package internal
+```
+
+View popularity of packages on npm:
+
+```sh
+$ popular-package global
+```
