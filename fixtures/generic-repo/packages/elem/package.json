@@ -1,0 +1,7 @@
+{
+  "name": "elem",
+  "version": "0.0.0",
+  "dependencies": {
+    "research": "^0.0.0"
+  }
+}

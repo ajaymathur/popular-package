@@ -1,0 +1,9 @@
+{ 
+  "name": "bolt-repo",
+  "version": "0.0.0",
+  "bolt": {
+    "workspaces": [
+      "packages/*"
+    ]
+  }
+}
