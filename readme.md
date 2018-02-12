@@ -7,7 +7,7 @@
 ## Install
 
 ```sh
-$ yan global add popular-package
+$ yarn global add popular-package
 ```
 
 ## Examples
