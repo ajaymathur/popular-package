@@ -12,51 +12,46 @@ $ yarn global add popular-package
 
 ## Examples
 
-View internal popularity of a package in bolt repo:
+View internal popularity of a package in bolt or lerna repo:
 
 ```sh
-$ popular-package internal --bolt
+$ popular-package internal
 ```
 
-View internal popularity of a packages for a lerna repo:
+View popularity of packages on npm for a bolt or lerna repo:
 
 ```sh
-$ popular-package internal --lerna
-```
-
-View popularity of packages on npm for a bolt repo:
-
-```sh
-$ popular-package global --bolt
-```
-
-View popularity of packages on npm for a lerna repo:
-
-```sh
-$ popular-package global --lerna
+$ popular-package global
 ```
 
 ## Usage
 
 ```sh
-$ popular-package <command> [options]
+$ popular-package <command>
 ```
 
 - `command` - (`internal | global`) Wheather to show stats for popularity in repo or globally on npm
-- `options` - [`lerna | bolt`] it is a lerna or a bolt repo
 
 ### Commands
 
 #### `internal`
 
-Get the stats of package with dependency in other packages within repo. If no options is passed it will look for packages in ***/packages/***
-
-- `--lerna` - If the mono repo is using lerna, needed to pick packages config from **lerna.json**
-- `--bolt`  - If the mono repo is using bolt, needed to pick bolt packages config from **package.json**
+Get the stats of package with dependency in other packages within repo.
 
 #### `global`
 
-Get the stats of package by the number of downloads in last day on npm. If no options is passed it will look for packages in ***/packages/***
+Get the stats of package by the number of downloads in last day on npm.
 
-- `--lerna` - If the mono repo is using lerna, needed to pick packages config from **lerna.json**
-- `--bolt`  - If the mono repo is using bolt, needed to pick bolt packages config from **package.json**
+### Packages Pattern
+
+#### `Bolt`
+
+It will read pattern of workspaces from bolt config in package json of the repo
+
+#### `Lerna`
+
+It will read pattern of packages from lerna.json in repo
+
+---
+
+***If neither lerna.json or bolt config in packages json is found packages pattern will defualt to &rarr; `[packages/*]`***
