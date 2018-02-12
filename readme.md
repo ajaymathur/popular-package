@@ -45,16 +45,16 @@ $ popular-package <command> [options]
 - `command` - (`internal | global`) Wheather to show stats for popularity in repo or globally on npm
 - `options` - [`lerna | bolt`] it is a lerna or a bolt repo
 
-## Commands
+### Commands
 
-### `internal`
+#### `internal`
 
 Get the stats of package with dependency in other packages within repo. If no options is passed it will look for packages in ***`/packages/*`***
 
 - `--lerna` - If the mono repo is using lerna, needed to pick packages config from **lerna.json**
 - `--bolt`  - If the mono repo is using bolt, needed to pick bolt packages config from **package.json**
 
-### `global`
+#### `global`
 
 Get the stats of package by the number of downloads in last day on npm. If no options is passed it will look for packages in ***`/packages/*`***
 
