@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 "use strict";
 const meow = require("meow");
+const chalk = require("chalk");
 const {internal, global} = require('./');
 
 async function cli(argv) {
@@ -20,24 +21,14 @@ async function cli(argv) {
 
       Examples
 
-      View internal popularity of a package in bolt repo:
+      View internal popularity of a package in bolt or lerna repo:
 
-      $ popular-package internal --bolt
-
-
-      View internal popularity of a packages for a lerna repo:
-
-      $ popular-package internal --lerna
+      $ popular-package internal
 
 
-      View popularity of packages on npm for a bolt repo:
+      View popularity of packages on npm for a bolt or lerna repo:
 
-      $ popular-package global --bolt
-
-
-      View popularity of packages on npm for a lerna repo:
-
-      $ popular-package global --lerna
+      $ popular-package global
     `
   });
 
@@ -51,15 +42,13 @@ async function cli(argv) {
   if (command === 'internal') {
     await internal({
       cwd,
-      flags: cli.flags,
     });
   } else if (command === 'global') {
     await global({
       cwd,
-      flags: cli.flags,
     });
   } else {
-    throw new Error(`Unknown command "${command}"`);
+    throw new Error(chalk`Unknown command {red "${command}"}. Supported commands are {green "internal"} and {green "global"}`);
   }
 }
 
