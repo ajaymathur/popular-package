@@ -36,11 +36,11 @@ $ popular-package <command>
 
 #### `internal`
 
-Get the stats of package with dependency in other packages within repo. If no options is passed it will look for packages in ***/packages/***
+Get the stats of package with dependency in other packages within repo.
 
 #### `global`
 
-Get the stats of package by the number of downloads in last day on npm. If no options is passed it will look for packages in ***/packages/***
+Get the stats of package by the number of downloads in last day on npm.
 
 ### Packages Pattern
 
@@ -54,4 +54,4 @@ It will read pattern of packages from lerna.json in repo
 
 ---
 
-***If neither lerna.json or bolt config in packages json is found it will defualt to pattern &rarr; `[packages/*]`***
+***If neither lerna.json or bolt config in packages json is found packages pattern will defualt to &rarr; `[packages/*]`***
