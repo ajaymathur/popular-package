@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 "use strict";
 const meow = require("meow");
-const path = require("path");
 const {internal, global} = require('./');
 
 async function cli(argv) {
@@ -12,7 +11,7 @@ async function cli(argv) {
 
       Usage
 
-      $ popular-package <command>
+      $ popular-package <command> [options]
 
       Commands
 
@@ -21,11 +20,24 @@ async function cli(argv) {
 
       Examples
 
-      To get popularity of packages within mono repo
-      $ popular-package internal
+      View internal popularity of a package in bolt repo:
 
-      To get popularityy of packages on npm
-      $ popular-package global
+      $ popular-package internal --bolt
+
+
+      View internal popularity of a packages for a lerna repo:
+
+      $ popular-package internal --lerna
+
+
+      View popularity of packages on npm for a bolt repo:
+
+      $ popular-package global --bolt
+
+
+      View popularity of packages on npm for a lerna repo:
+
+      $ popular-package global --lerna
     `
   });
 
@@ -34,18 +46,17 @@ async function cli(argv) {
   }
 
   const command = cli.input[0];
-  const cwd = process.cwd();
-  const pkgsDir = path.join(cwd, "packages");
+  const cwd = cli.flags.cwd || process.cwd();
 
   if (command === 'internal') {
     await internal({
+      cwd,
       flags: cli.flags,
-      pkgsDir,
     });
   } else if (command === 'global') {
     await global({
+      cwd,
       flags: cli.flags,
-      pkgsDir,
     });
   } else {
     throw new Error(`Unknown command "${command}"`);
