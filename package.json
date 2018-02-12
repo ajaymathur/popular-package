@@ -9,6 +9,9 @@
   "bin": "cli.js",
   "repository": "git@github.com:ajaymathur/popular-package.git",
   "license": "MIT",
+  "scripts": {
+    "test": "ava"
+  },
   "dependencies": {
     "chalk": "^2.3.0",
     "cli-table": "^0.3.1",
@@ -36,5 +39,9 @@
     "mono",
     "popularity",
     "npm"
-  ]
+  ],
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "fixturez": "^1.1.0"
+  }
 }
