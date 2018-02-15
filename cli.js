@@ -1,11 +1,25 @@
 #!/usr/bin/env node
+// @flow
 "use strict";
 const meow = require("meow");
 const chalk = require("chalk");
 const {internal, global} = require('./');
 
-async function cli(argv) {
-  const cli = meow({
+/*::
+  type FlagsType = {
+    cwd?: string
+  }
+ */
+/*::
+  type CliType = {
+    input: Array<string>,
+    flags: FlagsType,
+    showHelp: Function,
+  }
+*/
+
+async function cli(argv /*: Array<string>*/) {
+  const cli /*: CliType*/ = meow({
     argv,
     help: `
       popular package helps identify the popular package within a mono repo
