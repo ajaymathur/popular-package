@@ -10,7 +10,8 @@
   "repository": "git@github.com:ajaymathur/popular-package.git",
   "license": "MIT",
   "scripts": {
-    "test": "ava"
+    "test": "ava",
+    "typecheck": "flow"
   },
   "dependencies": {
     "chalk": "^2.3.0",
@@ -42,6 +43,7 @@
   ],
   "devDependencies": {
     "ava": "^0.25.0",
-    "fixturez": "^1.1.0"
+    "fixturez": "^1.1.0",
+    "flow-bin": "^0.65.0"
   }
 }
