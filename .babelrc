@@ -1,0 +1,14 @@
+{
+  "presets": [
+    "flow",
+    [
+      "env",
+      {
+        "loose": true,
+        "targets": {
+          "node": 6
+        }
+      }
+    ]
+  ]
+}
