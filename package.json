@@ -10,6 +10,7 @@
   "repository": "git@github.com:ajaymathur/popular-package.git",
   "license": "MIT",
   "scripts": {
+    "build": "mkdir -p dist && babel lib --out-dir dist",
     "test": "ava",
     "typecheck": "glow"
   },
@@ -25,7 +26,7 @@
     "read-pkg": "^3.0.0"
   },
   "engines": {
-    "node": ">=8.5.0"
+    "node": ">=6"
   },
   "files": [
     "cli.js",
@@ -42,7 +43,12 @@
     "npm"
   ],
   "devDependencies": {
+    "@babel/core": "^7.0.0-beta.40",
+    "@babel/plugin-transform-async-to-generator": "^7.0.0-beta.40",
     "ava": "^0.25.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-flow": "^6.23.0",
     "fixturez": "^1.1.0",
     "flow-bin": "^0.65.0",
     "glow": "^1.2.2"
