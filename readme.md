@@ -1,6 +1,6 @@
 # popular-package
 
-> Get the popularity stats of packages of repo both internally in repo and on npm for [bolt](https://github.com/boltpkg/bolt) or [lerna](https://github.com/lerna/lerna) repo
+> Get the popularity stats of packages in a mono repository either internally or on npm for [bolt](https://github.com/boltpkg/bolt) or [lerna](https://github.com/lerna/lerna).
 
 ![preview](https://raw.githubusercontent.com/ajaymathur/popular-package/master/github/preview.png)
 
@@ -12,13 +12,13 @@ $ yarn global add popular-package
 
 ## Examples
 
-View internal popularity of a package in bolt or lerna repo:
+View internal popularity of a package in bolt or lerna repository:
 
 ```sh
 $ popular-package internal
 ```
 
-View popularity of packages on npm for a bolt or lerna repo:
+View popularity of packages on npm for a bolt or lerna repository:
 
 ```sh
 $ popular-package global
@@ -30,13 +30,13 @@ $ popular-package global
 $ popular-package <command>
 ```
 
-- `command` - (`internal | global`) Wheather to show stats for popularity in repo or globally on npm
+- `command` - (`internal | global`) Wheather to show stats for popularity in repository or globally on npm
 
 ### Commands
 
 #### `internal`
 
-Get the stats of package with dependency in other packages within repo.
+Get the stats of package with dependency in other packages within repository.
 
 #### `global`
 
@@ -46,12 +46,12 @@ Get the stats of package by the number of downloads in last day on npm.
 
 #### `Bolt`
 
-It will read pattern of workspaces from bolt config in package json of the repo
+It will read pattern of workspaces from bolt config in package json of the repository
 
 #### `Lerna`
 
-It will read pattern of packages from lerna.json in repo
+It will read pattern of packages from lerna.json in repository
 
 ---
 
-***If neither lerna.json or bolt config in packages json is found packages pattern will defualt to &rarr; `[packages/*]`***
+***If neither lerna.json or bolt config in packages json is found packages pattern will default to &rarr; `[packages/*]`***
