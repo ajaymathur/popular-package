@@ -36,21 +36,21 @@ $ popular-package <command>
 
 #### `internal`
 
-Get the stats of package with dependency in other packages within repository.
+Get the stats of a package with dependency in other packages within repository.
 
 #### `global`
 
-Get the stats of package by the number of downloads in last day on npm.
+Get the stats of a package by the number of downloads in last day on npm.
 
 ### Packages Pattern
 
 #### `Bolt`
 
-It will read pattern of workspaces from bolt config in package json of the repository
+It will read pattern of workspaces from bolt config in package json of the repository.
 
 #### `Lerna`
 
-It will read pattern of packages from lerna.json in repository
+It will read pattern of packages from lerna.json in repository.
 
 ---
 
