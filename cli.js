@@ -3,7 +3,7 @@
 "use strict";
 const meow = require("meow");
 const chalk = require("chalk");
-const {internal, global} = require('./');
+const {internal, global, globalDaily} = require('./');
 
 /*::
   type FlagsType = {
@@ -32,6 +32,7 @@ async function cli(argv /*: Array<string>*/) {
 
       internal      Get the internal (within monorepo) popularity of the packages
       global        Get the popularity of packages by number of downloads on npm
+      global daily  <start date>  <end date> Get daily downloads of packages by number of downloads on npm. Dates in YYYY-MM-DD.
 
       Examples
 
@@ -43,6 +44,10 @@ async function cli(argv /*: Array<string>*/) {
       View popularity of packages on npm for a bolt or lerna repo:
 
       $ popular-package global
+
+      View daily downloads packages on npm for a bolt or lerna repo:
+
+      $ popular-package global daily 2018-01-01 2018-01-31
     `
   });
 
@@ -50,17 +55,28 @@ async function cli(argv /*: Array<string>*/) {
     cli.showHelp();
   }
 
-  const command = cli.input[0];
+  const input = cli.input;
+  const command = input.shift();
+  const parameters = input;
+  const jsonFlag = !!cli.flags.json;
+
   const cwd = cli.flags.cwd || process.cwd();
 
   if (command === 'internal') {
     await internal({
-      cwd,
+      cwd, jsonFlag
     });
   } else if (command === 'global') {
-    await global({
-      cwd,
-    });
+    
+    if (parameters){
+      await globalDaily({
+        cwd, parameters, jsonFlag
+      });
+    }else{
+      await global({
+        cwd, jsonFlag
+      });
+    }
   } else {
     throw new Error(chalk`Unknown command {red "${command}"}. Supported commands are {green "internal"} and {green "global"}`);
   }
