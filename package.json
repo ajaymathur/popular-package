@@ -10,7 +10,7 @@
   "repository": "git@github.com:ajaymathur/popular-package.git",
   "license": "MIT",
   "scripts": {
-    "test": "ava",
+    "test": "jest",
     "typecheck": "glow"
   },
   "dependencies": {
@@ -18,7 +18,7 @@
     "cli-table": "^0.3.1",
     "file-exists": "^5.0.1",
     "globby": "^7.1.1",
-    "got": "^8.0.3",
+    "got": "^11.8.6",
     "meow": "^4.0.0",
     "ora": "^1.4.0",
     "path-exists": "^3.0.0",
@@ -42,12 +42,22 @@
     "npm"
   ],
   "devDependencies": {
-    "ava": "^0.25.0",
-    "fixturez": "^1.1.0",
     "flow-bin": "^0.65.0",
-    "glow": "^1.2.2"
+    "glow": "^1.2.2",
+    "jest": "^30.3.0"
+  },
+  "jest": {
+    "testMatch": ["**/test/**/*.test.js"],
+    "testPathIgnorePatterns": ["/node_modules/", "/example/"],
+    "modulePathIgnorePatterns": ["<rootDir>/fixtures/", "<rootDir>/example/"]
   },
   "resolutions": {
-    "upath": "2.0.1"
+    "upath": "2.0.1",
+    "trim-newlines": ">=3.0.1",
+    "json5": ">=1.0.2",
+    "braces": ">=3.0.3",
+    "micromatch": ">=4.0.8",
+    "cross-spawn": ">=6.0.6",
+    "temp-dir": "1.0.0"
   }
 }
